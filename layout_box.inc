@@ -142,7 +142,7 @@ function _form_builder_webform_form_builder_map_layout_box() {
 }
 
 /**
- * @see webform_layout_theme().
+ * @see webform_layout_theme()
  */
 function theme_webform_layout_empty_layout_box($variables) {
   $output = '';

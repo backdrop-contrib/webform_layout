@@ -1,6 +1,7 @@
 <?php
 
 /**
+ * @file
  * This module provides a layout container for webforms.
  */
 

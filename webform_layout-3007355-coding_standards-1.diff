@@ -1,0 +1,25 @@
+diff --git i/layout_box.inc w/layout_box.inc
+index 4c993c3..b013661 100644
+--- i/layout_box.inc
++++ w/layout_box.inc
+@@ -142,7 +142,7 @@ function _form_builder_webform_form_builder_map_layout_box() {
+ }
+ 
+ /**
+- * @see webform_layout_theme().
++ * @see webform_layout_theme()
+  */
+ function theme_webform_layout_empty_layout_box($variables) {
+   $output = '';
+diff --git i/webform_layout.module w/webform_layout.module
+index 9b225a8..0214e05 100644
+--- i/webform_layout.module
++++ w/webform_layout.module
+@@ -1,6 +1,7 @@
+ <?php
+ 
+ /**
++ * @file
+  * This module provides a layout container for webforms.
+  */
+ 
