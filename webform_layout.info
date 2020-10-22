@@ -1,6 +1,7 @@
 name = Webform Layout
 description = Add a layout container type element to Webform.
-core = 7.x
+backdrop = 1.x
+type = module
 package = Webform
 
-dependencies[] = webform (4.x)
+dependencies[] = webform

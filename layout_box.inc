@@ -57,7 +57,7 @@ function _webform_render_layout_box($component, $value = NULL, $filter = TRUE) {
     '#webform_component' => $component,
     '#prefix' => '<div>',
     '#suffix' => '</div>',
-    '#attached' => array('css' => array(drupal_get_path('module', 'webform_layout') . '/layout_box.css')),
+    '#attached' => array('css' => array(backdrop_get_path('module', 'webform_layout') . '/css/layout_box.css')),
   );
 
   if (module_exists('form_builder_webform')) {
@@ -83,7 +83,7 @@ function webform_layout_box_prerender($element) {
   if ($element['#webform_component']['extra']['align'] == 'equal' && $n > 1) {
     $attributes['class'][] = 'child-width-' . $n;
   }
-  $element['#prefix'] = '<div ' . drupal_attributes($attributes) . '>';
+  $element['#prefix'] = '<div ' . backdrop_attributes($attributes) . '>';
   return $element;
 }
 
@@ -113,7 +113,7 @@ function _webform_display_layout_box($component, $value, $format = 'html') {
  * Implements _form_builder_webform_form_builder_types_component().
  */
 function _form_builder_webform_form_builder_types_layout_box() {
-  drupal_add_css(drupal_get_path('module', 'webform_layout') . '/form_builder.css');
+  backdrop_add_css(backdrop_get_path('module', 'webform_layout') . '/form_builder.css');
   $fields = array();
 
   $fields['layout_box'] = array(

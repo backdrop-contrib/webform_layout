@@ -6,18 +6,6 @@
  */
 
 /**
- * Implements hook_help().
- */
-function webform_layout_help($section = 'admin/help#webform_layout', $arg = NULL) {
-  switch ($section) {
-    case 'admin/help#webform_layout':
-      // Return a line-break version of the module README.txt
-      return nl2br(file_get_contents(drupal_get_path('module', 'webform_layout') . '/README.txt'));
-  }
-  return '';
-}
-
-/**
  * Implements hook_webform_component_info().
  */
 function webform_layout_webform_component_info() {
@@ -81,10 +69,8 @@ function webform_layout_form_add_submit($form, &$form_state) {
     // the updated webform is visible to anonymous users.
     cache_clear_all();
 
-    // Clear the entity cache if Entity Cache module is installed.
-    if (module_exists('entitycache')) {
-      entity_get_controller('node')->resetCache(array($nid));
-    }
+    // Clear the entity cache.
+    entity_get_controller('node')->resetCache(array($nid));
 
     $form_state['redirect'] = array("node/$nid/webform/components", array('query' => array('cid' => $cid)));
   }
